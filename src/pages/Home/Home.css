@@ -1,0 +1,250 @@
+main {
+    font-family: "Poppins", sans-serif;
+}
+
+/* ---------- COMMON ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.section-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff6f00;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.section-label .dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ff6f00;
+    border-radius: 50%;
+}
+
+.btn-primary {
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-outline.small {
+    border-color: #003366;
+    color: #003366;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    position: relative;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 13, 68, 0.85);
+}
+
+.hero-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 44px;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: #ff6f00;
+}
+
+.hero-content p {
+    color: #d1d5e0;
+    margin: 20px 0 32px;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image-card {
+    position: relative;
+    flex: 1;
+}
+
+.about-image-card img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.image-overlay {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-top-left {
+    top: -20px;
+    left: -20px;
+}
+
+.image-bottom-right {
+    bottom: -20px;
+    right: -20px;
+    text-align: center;
+}
+
+.image-bottom-right strong {
+    font-size: 18px;
+    color: #003366;
+}
+
+.stars {
+    color: #ff6f00;
+    font-size: 14px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    color: #000d44;
+}
+
+.about-content p {
+    color: #788094;
+    margin: 16px 0 24px;
+}
+
+.about-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.about-list li {
+    list-style: none;
+    position: relative;
+    padding-left: 16px;
+    color: #2c2c2c;
+}
+
+.about-list li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #ff6f00;
+    font-size: 10px;
+}
+
+/* ---------- CATEGORIES ---------- */
+.categories {
+    background-color: #f8f9fa;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.category-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #003366;
+}
+
+.category-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.05);
+    font-weight: 700;
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #f1f3f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.category-card h3 {
+    font-size: 18px;
+    color: #003366;
+}
+
+.category-card p {
+    font-size: 14px;
+    color: #788094;
+}

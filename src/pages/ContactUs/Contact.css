@@ -1,0 +1,322 @@
+.contact-page {
+    background-color: #f8fafc;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: var(--header-height);
+}
+
+.contact-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 968px) {
+    .contact-hero {
+        height: 320px;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 280px;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.breadcrumb-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary);
+    padding: 0 1rem 0.5rem;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.breadcrumb-item:hover {
+    color: var(--primary);
+}
+
+.breadcrumb-item svg {
+    color: var(--primary);
+}
+
+.breadcrumb-separator {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.breadcrumb-current {
+    color: white;
+}
+
+/* Main Contact Card Layout */
+.contact-main-section {
+    padding: 6rem 0 6rem;
+    position: relative;
+    z-index: 20;
+}
+
+.contact-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    overflow: visible;
+    /* Allow help flags to hang off */
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+}
+
+/* Left Panel (Industrial Blue) */
+.contact-info-panel {
+    background-color: #002d5b;
+    color: white;
+    padding: 4rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.info-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.info-image-container {
+    margin-bottom: 2.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 260px;
+}
+
+.panel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.help-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.help-cards {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    padding-left: 10px;
+}
+
+.help-card {
+    background: white;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.help-icon-box {
+    background: #f26522;
+    color: white;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+    position: absolute;
+    left: -15px;
+    box-shadow: 5px 5px 15px rgba(242, 101, 34, 0.3);
+}
+
+/* Flag fold effect */
+.help-icon-box::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 4px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid #d35400;
+    /* Darker orange fold */
+    border-left: 6px solid transparent;
+}
+
+.help-text {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.help-text span {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.help-text strong {
+    font-size: 0.9rem;
+    color: #002d5b;
+    font-weight: 700;
+}
+
+/* Right Panel (Form) */
+.contact-form-panel {
+    padding: 5rem 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.custom-contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.custom-contact-form input,
+.custom-contact-form textarea {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #eef2f6;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #fcfdfe;
+    color: #333;
+}
+
+.custom-contact-form textarea {
+    border-radius: 20px;
+    resize: none;
+}
+
+.custom-contact-form input:focus,
+.custom-contact-form textarea:focus {
+    outline: none;
+    border-color: #f26522;
+    background: white;
+    box-shadow: 0 10px 25px rgba(242, 101, 34, 0.08);
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.submit-now-btn {
+    background-color: #002d5b;
+    color: white;
+    padding: 1rem 3.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0, 45, 91, 0.15);
+}
+
+.submit-now-btn:hover {
+    background-color: #001a35;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 45, 91, 0.25);
+}
+
+@media (max-width: 968px) {
+    .contact-card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-main-section {
+        padding: 4rem 0;
+    }
+
+    .contact-info-panel,
+    .contact-form-panel {
+        padding: 3rem 1.25rem;
+    }
+
+    .info-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .help-cards {
+        gap: 1.5rem;
+    }
+
+    .help-card {
+        padding: 0.75rem 1rem 0.75rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-icon-box {
+        width: 36px;
+        height: 36px;
+        left: -10px;
+    }
+
+    .submit-now-btn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+}

@@ -1,0 +1,21 @@
+﻿[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 1757 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                               [39m[1m[2m    2.25 kB[22m[1m[22m[2m Γöé gzip:  0.72 kB[22m
+[2mdist/[22m[32massets/category-4-DwnmLRJg.svg           [39m[1m[2m   23.45 kB[22m[1m[22m[2m Γöé gzip: 17.21 kB[22m
+[2mdist/[22m[32massets/category-1-31A2HfHh.svg           [39m[1m[2m   34.58 kB[22m[1m[22m[2m Γöé gzip: 25.23 kB[22m
+[2mdist/[22m[32massets/category-2-C3NlUhqM.svg           [39m[1m[2m   42.13 kB[22m[1m[22m[2m Γöé gzip: 31.17 kB[22m
+[2mdist/[22m[32massets/category-5-IUVlLw1y.svg           [39m[1m[2m   42.48 kB[22m[1m[22m[2m Γöé gzip: 31.80 kB[22m
+[2mdist/[22m[32massets/category-3-Dm94DLED.svg           [39m[1m[2m   42.60 kB[22m[1m[22m[2m Γöé gzip: 31.30 kB[22m
+[2mdist/[22m[32massets/Logo-Dy5xUvVQ.png                 [39m[1m[2m   71.79 kB[22m[1m[22m
+[2mdist/[22m[32massets/category-6-Zjt5fzX3.svg           [39m[1m[2m   79.64 kB[22m[1m[22m[2m Γöé gzip: 59.70 kB[22m
+[2mdist/[22m[32massets/about_image_overlap-BjKnU318.png  [39m[1m[2m  110.00 kB[22m[1m[22m
+[2mdist/[22m[32massets/Sales-YxHgWxpI.png                [39m[1m[2m  387.10 kB[22m[1m[22m
+[2mdist/[22m[32massets/about_image-dhJqC7tS.png          [39m[1m[2m  462.22 kB[22m[1m[22m
+[2mdist/[22m[32massets/Engineering-zvW3wPD1.png          [39m[1m[2m  514.34 kB[22m[1m[22m
+[2mdist/[22m[32massets/hero_bg-Ct3fts4L.png              [39m[1m[2m1,223.05 kB[22m[1m[22m
+[2mdist/[22m[35massets/index-ftsoMiQV.css                [39m[1m[2m   29.16 kB[22m[1m[22m[2m Γöé gzip:  6.08 kB[22m
+[2mdist/[22m[36massets/index-2ZtVFRmF.js                 [39m[1m[2m  270.31 kB[22m[1m[22m[2m Γöé gzip: 84.89 kB[22m
+[32mΓ£ô built in 7.81s[39m
