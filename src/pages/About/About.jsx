@@ -4,7 +4,7 @@ import './About.css';
 
 import aboutMain from '../../assets/about_image.png';
 import aboutOverlap from '../../assets/about_image_overlap.png';
-import certificate from '../../assets/certificate.png';
+import certificate from '../../assets/Certificate.png';
 
 export default function About() {
     return (
