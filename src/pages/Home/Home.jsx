@@ -1,7 +1,10 @@
 import React from "react";
 import "./Home.css";
+import { Star, Phone, Mail } from 'lucide-react';
+import { products } from "../../data/products";
 
-import heroBg from "../../assets/hero_bg.png";
+import heroBg from "../../assets/hero-bg.jpeg";
+import technicianImg from "../../assets/technician.png";
 import aboutImage from "../../assets/about_image.png";
 import imageOverlap from "../../assets/about_image_overlap.png";
 
@@ -12,11 +15,9 @@ import category4 from "../../assets/category-4.svg";
 import category5 from "../../assets/category-5.svg";
 import category6 from "../../assets/category-6.svg";
 
-// import product1 from "../../assets/product-1.png";
-// import product2 from "../../assets/product-2.png";
-// import product3 from "../../assets/product-3.png";
-// import product4 from "../../assets/product-4.png";
-// import contactImage from "../../assets/contact_us.png";
+import contactImage from "../../assets/contact_us.png";
+import phoneIcon from "../../assets/phone.svg";
+import emailIcon from "../../assets/email.svg";
 
 const Home = () => {
     return (
@@ -28,23 +29,29 @@ const Home = () => {
 
                 <div className="hero-container">
                     <div className="hero-content">
-                        <h1>
-                            Engineering The <span>Future Of Industry</span>
+                        <h1 className="animate-fade-in">
+                            Engineering The <span>Future Of</span>
                             <br />
-                            Through Innovation
+                            <span>Industry</span> Through Innovation
                             <br />
                             And Technology
                         </h1>
 
-                        <p>
-                            Discover premium industrial automation, medical technology,
-                            and high-performance electronics designed for mission-critical
-                            applications.
+                        <p className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                            Discover premium industrial automation, medical technology, and high-
+                            performance electronics designed for mission-critical applications.
                         </p>
 
-                        <div className="hero-buttons">
-                            <button className="btn-outline">Explore Products</button>
-                            <button className="btn-primary">Contact Sales</button>
+                        <div className="hero-buttons animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                            <button className="btn-hero-outline">Explore Products</button>
+                            <button className="btn-hero-solid">Contact sales</button>
+                        </div>
+                    </div>
+
+                    <div className="hero-image-side animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                        <div className="technician-wrapper">
+                            <div className="technician-circle"></div>
+                            <img src={technicianImg} alt="Technician" className="technician-img" />
                         </div>
                     </div>
                 </div>
@@ -52,60 +59,66 @@ const Home = () => {
 
             {/* ABOUT SECTION */}
             <section className="about">
-                <div className="container about-container">
-                    <div className="about-image-card">
-                        <img src={aboutImage} alt="Industrial Work" />
+                <div className="container">
+                    <div className="about-grid">
+                        <div className="staggered-images animate-fade-in">
+                            <img src={aboutImage} alt="Industrial Work" className="main-about-img" />
 
-                        <div className="image-overlay image-top-left">
-                            <img src={imageOverlap} alt="Square Image" />
+                            <div className="image-overlay-container">
+                                <img src={imageOverlap} alt="Square Detail" className="overlap-img" />
+                            </div>
+
+                            <div className="experience-box">
+                                <h4 style={{ fontSize: '1.4rem', color: '#002d5b', fontWeight: '800', lineHeight: '1.2', marginBottom: '1rem' }}>
+                                    20+ Years of<br />Experience
+                                </h4>
+                                <div className="stars" style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} size={20} fill="#f26522" color="#f26522" />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="image-overlay image-bottom-right">
-                            <strong>20+ Years of</strong> <br />
-                            <strong>Experience</strong>
-                            <div className="stars">★★★★★</div>
+                        <div className="about-content animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                            <span className="subtitle">ABOUT US COMPANY</span>
+
+                            <h2 className="section-title" style={{ color: '#002d5b', fontSize: '3rem', marginBottom: '2rem' }}>
+                                Delivering Industrial<br />Solutions
+                            </h2>
+
+                            <p style={{ color: '#788094', fontSize: '15px', lineHeight: '1.7', marginBottom: '24px' }}>
+                                We started as a small organization, but by adopting the latest production
+                                technologies and maintaining strict quality control, we have successfully
+                                delivered a wide range of products and services, ensuring complete
+                                customer satisfaction.
+                            </p>
+
+                            <ul className="about-list">
+                                <li>Power Transmission</li>
+                                <li>Authorized Stockist</li>
+                                <li>Advanced Technology</li>
+                                <li>Quality Assurance</li>
+                                <li>Customer Satisfaction</li>
+                                <li>Custom Manufacturing</li>
+                            </ul>
+
+                            <button className="btn-primary">MORE ABOUT US</button>
                         </div>
-                    </div>
-
-                    <div className="about-content">
-                        <span className="section-label">
-                            <span className="dot"></span> ABOUT COMPANY
-                        </span>
-
-                        <h2>Delivering Industrial Solutions</h2>
-
-                        <p>
-                            We focus on small organizations, but by adopting the latest
-                            production technologies and maintaining strict quality control,
-                            we ensure completely reliable and accurate products and services.
-                        </p>
-
-                        <ul className="about-list">
-                            <li>Power Transmission</li>
-                            <li>Authorized Service</li>
-                            <li>Advanced Technology</li>
-                            <li>Quality Assurance</li>
-                            <li>Customer Satisfaction</li>
-                            <li>Custom Manufacturing</li>
-                        </ul>
-
-                        <button className="btn-primary">More About Us</button>
                     </div>
                 </div>
             </section>
 
-            {/* CATEGORIES */}
+            {/* CATEGORIES SECTION */}
             <section className="categories">
-                <div className="container">
+                <div className="container" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
                     <div className="categories-header">
-                        <div>
-                            <span className="section-label">
-                                <span className="dot"></span> CATEGORIES
-                            </span>
-                            <h2>Explore Our Popular Categories</h2>
+                        <div className="animate-fade-in">
+                            <span className="subtitle">CATEGORIES</span>
+                            <h2 className="section-title">Explore Our Popular Categories</h2>
                         </div>
 
-                        <button className="btn-outline small">View All</button>
+                        <button className="btn-outline-blue">View All</button>
                     </div>
 
                     <div className="category-grid">
@@ -120,12 +133,117 @@ const Home = () => {
                             <div className="category-card" key={num}>
                                 <span className="category-number">{num}</span>
                                 <div className="category-icon">
-                                    <img src={icon} alt="" />
+                                    <img src={icon} alt={title} />
                                 </div>
-                                <h3>{title}</h3>
-                                <p>{desc}</p>
+                                <div className="category-card-content">
+                                    <h3>{title}</h3>
+                                    <p>{desc}</p>
+                                </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* PRODUCTS SECTION */}
+            <section className="products">
+                <div className="container products-container animate-fade-in">
+                    <div className="products-header">
+                        <span className="subtitle">PRODUCTS</span>
+                        <h2 className="section-title">Innovative Industrial Products</h2>
+                    </div>
+
+                    <div className="product-grid">
+                        {products.slice(0, 4).map((product) => (
+                            <div className="product-card" key={product.id}>
+                                <div className="product-image">
+                                    <img src={product.image} alt={product.name} />
+                                </div>
+
+                                <div className="product-card-footer">
+                                    <div className="product-info">
+                                        <h3>{product.name}</h3>
+                                    </div>
+                                    <div className="product-btn-cutout">
+                                        <button className="product-btn" aria-label="View Product">
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="products-footer">
+                        <button className="btn-primary" style={{ padding: '14px 40px', textTransform: 'uppercase', fontSize: '13px' }}>View All Products</button>
+                    </div>
+                </div>
+            </section>
+
+            {/* CONTACT SECTION */}
+            <section className="contact-main-section">
+                <div className="container">
+                    <div className="contact-card-container animate-fade-in">
+                        {/* Left Column: Info & Image */}
+                        <div className="contact-info-panel">
+                            <div className="info-header">
+                                <h2>Reach Out & Connect</h2>
+                                <p>Our team of experts is ready to assist you with your industrial engineering needs.</p>
+                            </div>
+
+                            <div className="info-image-container">
+                                <img src={contactImage} alt="Contact Us" className="panel-image" />
+                            </div>
+
+                            <div className="help-section">
+                                <h3>Need More Help?</h3>
+                                <div className="help-cards">
+                                    <div className="help-card">
+                                        <div className="help-icon-box">
+                                            <Phone size={20} />
+                                        </div>
+                                        <div className="help-text">
+                                            <span>Customers Support</span>
+                                            <strong>+91 9825088482</strong>
+                                        </div>
+                                    </div>
+                                    <div className="help-card">
+                                        <div className="help-icon-box">
+                                            <Mail size={20} />
+                                        </div>
+                                        <div className="help-text">
+                                            <span>Email Us</span>
+                                            <strong>Bankim@Mangalam.info</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Submission Form */}
+                        <div className="contact-form-panel">
+                            <form className="custom-contact-form">
+                                <div className="form-group">
+                                    <input type="text" placeholder="Your Name" required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="email" placeholder="Email Id" required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="tel" placeholder="Phone No" required />
+                                </div>
+                                <div className="form-group">
+                                    <textarea rows="5" placeholder="Message" required></textarea>
+                                </div>
+                                <div className="form-submit">
+                                    <button type="submit" className="submit-now-btn">
+                                        SUBMIT NOW
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>

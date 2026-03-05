@@ -2,6 +2,10 @@ import { Home, Star, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
+import aboutMain from '../../assets/about_image.png';
+import aboutOverlap from '../../assets/about_image_overlap.png';
+import certificate from '../../assets/certificate.png';
+
 export default function About() {
     return (
         <div className="about-page">
@@ -22,20 +26,22 @@ export default function About() {
                     <div className="grid grid-2" style={{ alignItems: 'center', gap: '5rem' }}>
                         <div className="staggered-images animate-fade-in">
                             <img
-                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
+                                src={aboutMain}
                                 alt="Industrial Main"
                                 className="image-main"
                             />
-                            <img
-                                src="https://images.unsplash.com/photo-1592659762303-90081d34b277?auto=format&fit=crop&q=80&w=800"
-                                alt="Industrial Detail"
-                                className="image-overlay"
-                            />
+                            <div className="image-overlay-container">
+                                <img
+                                    src={aboutOverlap}
+                                    alt="Industrial Detail"
+                                    className="image-overlay"
+                                />
+                            </div>
                             <div className="experience-badge">
-                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#002d5b' }}>20+ Years of Experience</h4>
-                                <div className="stars" style={{ display: 'flex', justifyContent: 'center', gap: '4px' }}>
+                                <h4 style={{ fontSize: '1.4rem', color: '#002d5b', fontWeight: '800', lineHeight: '1.2', marginBottom: '1rem' }}>20+ Years of<br />Experience</h4>
+                                <div className="stars" style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
                                     {[...Array(5)].map((_, i) => (
-                                        <Star key={i} size={16} fill="#f26522" color="#f26522" />
+                                        <Star key={i} size={20} fill="#f26522" color="#f26522" />
                                     ))}
                                 </div>
                             </div>
@@ -93,7 +99,7 @@ export default function About() {
                         </div>
                         <div className="certificate-image-container">
                             <img
-                                src="https://images.unsplash.com/photo-1621243804936-775306a8f2e3?auto=format&fit=crop&q=80&w=1200"
+                                src={certificate}
                                 alt="Certificate of Authorization"
                             />
                         </div>

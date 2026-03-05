@@ -9,6 +9,7 @@ export default function ProductDetails() {
     const { id } = useParams();
     const product = products.find(p => p.id === parseInt(id));
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     if (!product) {
         return (
@@ -21,7 +22,7 @@ export default function ProductDetails() {
 
     const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 3);
 
-    const features = [
+    const displayFeatures = product.features || [
         "Higher torque ratings",
         "Foot print same as ET Series",
         "Suitable for numerous applications",
@@ -46,7 +47,7 @@ export default function ProductDetails() {
                 <div className="product-details-hero-bg-text">Product Details</div>
             </section>
 
-            <div className="container">
+            <div className="container" style={{ maxWidth: "1200px" }}>
                 {/* Intro Section */}
                 <section className="product-intro">
                     <h2>{product.name.toUpperCase()}</h2>
@@ -60,8 +61,12 @@ export default function ProductDetails() {
                             <img src={product.image} alt={product.name} />
                         </div>
                         <div className="thumbnail-list">
-                            {[1, 2, 3].map((_, i) => (
-                                <div key={i} className={`thumb-box ${i === 0 ? 'active' : ''}`}>
+                            {[0, 1, 2].map((i) => (
+                                <div
+                                    key={i}
+                                    className={`thumb-box ${activeIndex === i ? 'active' : ''}`}
+                                    onClick={() => setActiveIndex(i)}
+                                >
                                     <img src={product.image} alt={product.name} />
                                 </div>
                             ))}
@@ -69,17 +74,25 @@ export default function ProductDetails() {
                     </div>
 
                     <div className="product-info-panel">
-                        <span className="category-label">{product.category.toUpperCase()}</span>
+                        <div className="category-badge">
+                            {product.category}
+                        </div>
+
                         <p className="product-description">
                             {product.description}
                         </p>
-                        <ul className="product-features">
-                            {features.map((feature, index) => (
-                                <li key={index}>{feature}</li>
+
+                        <ul className="product-features-list">
+                            {displayFeatures.map((feature, index) => (
+                                <li key={index}>
+                                    <span className="feature-arrow">▶</span>
+                                    {feature}
+                                </li>
                             ))}
                         </ul>
-                        <button className="inquiry-btn" onClick={() => setIsModalOpen(true)}>
-                            Inquiry <MoveRight size={18} />
+
+                        <button className="inquiry-submit-btn" onClick={() => setIsModalOpen(true)}>
+                            Inquiry <MoveRight size={20} />
                         </button>
                     </div>
                 </main>

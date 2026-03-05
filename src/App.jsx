@@ -34,28 +34,30 @@ function MainLayout({ children }) {
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <Routes>
-        {/* Landing / Index page — has its own header & footer */}
-        <Route path="/" element={<Index />} />
+      <div className="site-wrapper">
+        <ScrollToTop />
+        <Routes>
+          {/* Landing / Index page — has its own header & footer */}
+          <Route path="/" element={<Index />} />
 
-        {/* Inner pages — wrapped with Header + Footer */}
-        <Route path="/home" element={<MainLayout><Home /></MainLayout>} />
-        <Route path="/about" element={<MainLayout><About /></MainLayout>} />
-        <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
-        <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
-        <Route path="/products/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
+          {/* Inner pages — wrapped with Header + Footer */}
+          <Route path="/home" element={<MainLayout><Home /></MainLayout>} />
+          <Route path="/about" element={<MainLayout><About /></MainLayout>} />
+          <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
+          <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
+          <Route path="/products/:id" element={<MainLayout><ProductDetails /></MainLayout>} />
 
-        <Route path="*" element={
-          <MainLayout>
-            <div style={{ textAlign: 'center', padding: '10rem 0' }}>
-              <h1>404</h1>
-              <p>Page Not Found</p>
-              <Link to="/" className="btn btn-primary" style={{ marginTop: '2rem' }}>Back Home</Link>
-            </div>
-          </MainLayout>
-        } />
-      </Routes>
+          <Route path="*" element={
+            <MainLayout>
+              <div style={{ textAlign: 'center', padding: '10rem 0' }}>
+                <h1>404</h1>
+                <p>Page Not Found</p>
+                <Link to="/" className="btn btn-primary" style={{ marginTop: '2rem' }}>Back Home</Link>
+              </div>
+            </MainLayout>
+          } />
+        </Routes>
+      </div>
     </Router>
   );
 }

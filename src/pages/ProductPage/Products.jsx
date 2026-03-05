@@ -29,10 +29,6 @@ export default function Products() {
         return products.filter(product => selectedCategories.includes(product.category));
     }, [selectedCategories]);
 
-    // Check if ECH Series (id: 1) should be shown as featured
-    // ECH Series is in Gear Boxes category
-    const showECHFeatured = selectedCategories.length === 0 || selectedCategories.includes("Gear Boxes");
-
     return (
         <div className="products-page">
             {/* Hero Section */}
@@ -92,39 +88,31 @@ export default function Products() {
                     {/* Main Content */}
                     <div className="products-content">
                         <div className="products-grid">
-                            {/* Special Featured Card (ECH Series) - Only show if Gear Boxes selected or no filter */}
-                            {showECHFeatured && (
-                                <div className="featured-product-card">
-                                    <p>
-                                        Keeping in line of the strategy of "Gearing the Future" Better & Faster the 'ECH' Series delivers to industry needs. The ECH series has been developed keeping in mind the industry requirements which offers greater flexibility and modularity and caters to a wide range of industries.
-                                    </p>
-                                    <Link to="/products/1" className="read-more-btn">Read More</Link>
-                                    <div className="featured-title-bottom">
-                                        <span>ECH Series</span>
-                                        <div className="circle-btn-arrow">
-                                            <ChevronRight size={24} />
+                            {filteredProducts.map((product) => (
+                                <div className="product-card" key={product.id}>
+                                    <div className="product-card-overlay"></div>
+
+                                    <div className="product-image">
+                                        <img src={product.image} alt={product.name} />
+                                    </div>
+
+                                    <div className="product-hover-content">
+                                        <p>{product.description}</p>
+                                        <Link to={`/products/${product.id}`} className="btn-read-more">Read More</Link>
+                                    </div>
+
+                                    <div className="product-card-footer">
+                                        <div className="product-info">
+                                            <h3>{product.name}</h3>
+                                        </div>
+                                        <div className="product-btn-wrapper">
+                                            <Link to={`/products/${product.id}`} className="product-btn" aria-label="View Product">
+                                                <ChevronRight size={24} />
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
-                            )}
-
-                            {filteredProducts
-                                .filter(product => !showECHFeatured || product.id !== 1)
-                                .map((product) => (
-                                    <div key={product.id} className="product-card-wrapper">
-                                        <div className="product-card">
-                                            <div className="product-img-wrapper">
-                                                <img src={product.image} alt={product.name} />
-                                            </div>
-                                            <div className="product-info-minimal">
-                                                <h3>{product.name}</h3>
-                                                <Link to={`/products/${product.id}`} className="circle-btn-arrow">
-                                                    <ChevronRight size={24} />
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+                            ))}
                         </div>
 
                         {filteredProducts.length === 0 && (
@@ -145,4 +133,3 @@ export default function Products() {
         </div>
     );
 }
-

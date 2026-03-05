@@ -2,8 +2,10 @@ header {
     height: var(--header-height);
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1920px;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -114,5 +116,32 @@ header.scrolled {
 
     .mobile-toggle {
         display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 36px;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .brand-sub {
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .mobile-nav {
+        padding: 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .mobile-nav .nav-link {
+        font-size: 1rem;
     }
 }

@@ -33,10 +33,31 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--background);
+  background-color: #e8ecf1;
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Site-wide wrapper to prevent content from spreading on ultra-wide screens */
+.site-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: var(--background);
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+}
+
+/* On normal screens (<= 1920px), no visible effect */
+@media (max-width: 1920px) {
+  body {
+    background-color: var(--background);
+  }
+
+  .site-wrapper {
+    box-shadow: none;
+  }
 }
 
 h1,
