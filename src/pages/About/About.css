@@ -16,7 +16,7 @@
 
 .about-hero h1 {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -48,6 +48,8 @@
     gap: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-hero-bg-text {
@@ -66,9 +68,9 @@
 
 .staggered-images {
     position: relative;
-    width: 100%;
+    width: auto;
     margin: 50px 0 30px 50px;
-    /* Add margin to accommodate the offsets */
+    max-width: 100%;
 }
 
 .image-main {
@@ -79,6 +81,7 @@
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
     display: block;
     z-index: 1;
+    max-width: 100%;
 }
 
 .image-overlay-container {
@@ -88,7 +91,6 @@
     background-color: #ffffff;
     border-radius: 30px;
     padding: 12px;
-    /* White border effect */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     z-index: 2;
     width: 240px;
@@ -123,7 +125,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -141,7 +143,6 @@
 
     .image-overlay-container {
         display: none;
-        /* Hide overlap-container on mobile for clean look */
     }
 
     .experience-badge {
@@ -168,6 +169,7 @@
     font-weight: 600;
     color: #333;
     font-size: 0.95rem;
+    flex-wrap: wrap;
 }
 
 .feature-item svg {
@@ -175,9 +177,14 @@
     flex-shrink: 0;
 }
 
-/* Certificate Section Refinement */
+.section {
+    padding-top: 10px;
+}
+
+/* Certificate Section */
+
 .certificate-section {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background-color: #fff;
 }
 
@@ -190,9 +197,17 @@
 
 .certificate-text h2 {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #002d5b;
     text-align: center;
+}
+
+@media (max-width: 968px) {
+    .certificate-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -214,19 +229,11 @@
     width: 100%;
     max-width: 850px;
     border-radius: 4px;
-    /* Flatter edges as seen in some certificates */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-    /* Subtle shadow as per image */
     border: 1px solid #eee;
 }
 
-@media (max-width: 968px) {
-    .certificate-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 3rem;
-    }
-}
+/* Small Phones */
 
 @media (max-width: 480px) {
     .about-hero h1 {
@@ -267,4 +274,42 @@
     .breadcrumb {
         font-size: 0.9rem;
     }
+}
+
+/* Ultra Small Phones (320px) */
+
+@media (max-width: 360px) {
+
+    .about-hero {
+        height: 220px;
+    }
+
+    .about-hero h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .breadcrumb {
+        font-size: 0.8rem;
+        gap: 0.3rem;
+    }
+
+    .image-main {
+        height: 190px;
+    }
+
+    .experience-badge {
+        padding: 1rem 0.8rem;
+        font-size: 0.8rem;
+        margin-left: 5px;
+    }
+
+    .certificate-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-item {
+        font-size: 0.85rem;
+    }
+
 }

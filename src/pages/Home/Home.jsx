@@ -1,5 +1,8 @@
 import React from "react";
 import "./Home.css";
+import '../ProductPage/Products.css';
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 import { Star, Phone, Mail } from 'lucide-react';
 import { products } from "../../data/products";
 
@@ -30,11 +33,11 @@ const Home = () => {
                 <div className="hero-container">
                     <div className="hero-content">
                         <h1 className="animate-fade-in">
-                            Engineering The <span>Future Of</span>
+                            Engineering The
                             <br />
-                            <span>Industry</span> Through Innovation
+                            <span>Future Of Industry</span>
                             <br />
-                            And Technology
+                            Through Innovation And Technology
                         </h1>
 
                         <p className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
@@ -43,8 +46,12 @@ const Home = () => {
                         </p>
 
                         <div className="hero-buttons animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                            <button className="btn-hero-outline">Explore Products</button>
-                            <button className="btn-hero-solid">Contact sales</button>
+                            <Link to="/products" className="btn-hero-outline">
+                                Explore Products
+                            </Link>
+                            <Link to="/contact" className="btn-hero-solid">
+                                Contact Sales
+                            </Link>
                         </div>
                     </div>
 
@@ -69,7 +76,7 @@ const Home = () => {
                             </div>
 
                             <div className="experience-box">
-                                <h4 style={{ fontSize: '1.4rem', color: '#002d5b', fontWeight: '800', lineHeight: '1.2', marginBottom: '1rem' }}>
+                                <h4 style={{ fontSize: '1.4rem', color: '#002d5b', fontWeight: '600', lineHeight: '1.2', marginBottom: '1rem' }}>
                                     20+ Years of<br />Experience
                                 </h4>
                                 <div className="stars" style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
@@ -103,22 +110,25 @@ const Home = () => {
                                 <li>Custom Manufacturing</li>
                             </ul>
 
-                            <button className="btn-primary">MORE ABOUT US</button>
+                            <Link to="/about" className="btn-primary">
+                                MORE ABOUT US
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* CATEGORIES SECTION */}
             <section className="categories">
                 <div className="container" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
                     <div className="categories-header">
                         <div className="animate-fade-in">
                             <span className="subtitle">CATEGORIES</span>
-                            <h2 className="section-title">Explore Our Popular Categories</h2>
+                            <h2 className="section-title" style={{fontWeight: '600', lineHeight: '1', marginBottom: '2rem' }}>Explore Our Popular Categories</h2>
                         </div>
 
-                        <button className="btn-outline-blue">View All</button>
+                        <Link to="/products" className="btn-outline-blue hide-mobile">
+                            View All
+                        </Link>
                     </div>
 
                     <div className="category-grid">
@@ -137,10 +147,16 @@ const Home = () => {
                                 </div>
                                 <div className="category-card-content">
                                     <h3>{title}</h3>
-                                    <p>{desc}</p>
+                                    <p className="category-description">{desc}</p>
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="categories-mobile-footer show-mobile">
+                        <Link to="/products" className="btn-outline-blue">
+                            View All
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -150,26 +166,39 @@ const Home = () => {
                 <div className="container products-container animate-fade-in">
                     <div className="products-header">
                         <span className="subtitle">PRODUCTS</span>
-                        <h2 className="section-title">Innovative Industrial Products</h2>
+                        <h2 className="section-title" style={{fontWeight: '600', lineHeight: '1', marginBottom: '1rem' }}>Innovative Industrial Products</h2>
                     </div>
 
-                    <div className="product-grid">
+                    <div className="products-grid home-products-grid">
                         {products.slice(0, 4).map((product) => (
                             <div className="product-card" key={product.id}>
+                                <div className="product-card-overlay"></div>
+
                                 <div className="product-image">
                                     <img src={product.image} alt={product.name} />
+                                </div>
+
+                                <div className="product-hover-content">
+                                    <p>{product.description}</p>
+
+                                    <Link to={`/products/${product.id}`} className="btn-read-more">
+                                        View Details
+                                    </Link>
                                 </div>
 
                                 <div className="product-card-footer">
                                     <div className="product-info">
                                         <h3>{product.name}</h3>
                                     </div>
-                                    <div className="product-btn-cutout">
-                                        <button className="product-btn" aria-label="View Product">
-                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                                                <polyline points="9 18 15 12 9 6"></polyline>
-                                            </svg>
-                                        </button>
+
+                                    <div className="product-btn-wrapper">
+                                        <Link
+                                            to={`/products/${product.id}`}
+                                            className="product-btn"
+                                            aria-label="View Product"
+                                        >
+                                            <ChevronRight size={24} />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +206,9 @@ const Home = () => {
                     </div>
 
                     <div className="products-footer">
-                        <button className="btn-primary" style={{ padding: '14px 40px', textTransform: 'uppercase', fontSize: '13px' }}>View All Products</button>
+                        <Link to="/products" className="btn-primary" style={{ padding: '12px 30px', textTransform: 'uppercase', fontSize: '16px', fontWeight: '400' }} onClick={() => navigate("/products")}>
+                            View All Products
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -189,7 +220,7 @@ const Home = () => {
                         {/* Left Column: Info & Image */}
                         <div className="contact-info-panel">
                             <div className="info-header">
-                                <h2>Reach Out & Connect</h2>
+                                <h2 style={{fontWeight: '600', lineHeight: '0.7', marginBottom: '1.7rem' }}>Reach Out & Connect</h2>
                                 <p>Our team of experts is ready to assist you with your industrial engineering needs.</p>
                             </div>
 
@@ -198,7 +229,7 @@ const Home = () => {
                             </div>
 
                             <div className="help-section">
-                                <h3>Need More Help?</h3>
+                                <h3 style={{fontWeight: '600', lineHeight: '0.4', marginBottom: '2rem' }}>Need More Help?</h3>
                                 <div className="help-cards">
                                     <div className="help-card">
                                         <div className="help-icon-box">
@@ -238,7 +269,7 @@ const Home = () => {
                                     <textarea rows="5" placeholder="Message" required></textarea>
                                 </div>
                                 <div className="form-submit">
-                                    <button type="submit" className="submit-now-btn">
+                                    <button type="submit" className="submit-now-btn" style={{padding: '12px 30px', fontWeight: '400'}}>
                                         SUBMIT NOW
                                     </button>
                                 </div>

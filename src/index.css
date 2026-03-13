@@ -11,7 +11,7 @@
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --radius: 0.5rem;
-  --header-height: 80px;
+  --header-height: 70px;
   --hero-dark: #2c3e50;
   --footer-dark: #002d5b;
 }
@@ -33,31 +33,19 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #e8ecf1;
+  background-color: var(--background);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
-}
-
-/* Site-wide wrapper to prevent content from spreading on ultra-wide screens */
-.site-wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
-  background-color: var(--background);
+  /* Global overflow prevention */
   position: relative;
-  overflow-x: hidden;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* Keeping width: 100% as it's generally safe for body with overflow-x: hidden */
 }
 
-/* On normal screens (<= 1920px), no visible effect */
-@media (max-width: 1920px) {
-  body {
-    background-color: var(--background);
-  }
-
-  .site-wrapper {
-    box-shadow: none;
-  }
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -125,6 +113,7 @@ ul {
   font-weight: 600;
   transition: all 0.2s ease;
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -193,6 +182,10 @@ ul {
 
 @media (max-width: 968px) {
   .section-title {
+    font-size: 2.5rem;
+  }
+
+  h1 {
     font-size: 2.8rem;
   }
 }
@@ -213,7 +206,11 @@ ul {
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 2.22rem;
   }
 
   .container {
@@ -226,13 +223,30 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+
   .section-title {
+    font-size: 1.6rem;
+  }
+
+  h1 {
     font-size: 1.8rem;
   }
 
   .btn {
     padding: 0.6rem 1.25rem;
     font-size: 0.9rem;
+    white-space: normal;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .grid {
+    gap: 1.25rem;
   }
 }
 
@@ -256,4 +270,15 @@ ul {
   .text-center-mobile {
     text-align: center;
   }
+}
+
+/* Responsive media elements */
+img,
+picture,
+video,
+svg,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
 }

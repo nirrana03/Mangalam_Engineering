@@ -2,10 +2,8 @@ header {
     height: var(--header-height);
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1920px;
+    left: 0;
+    right: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -41,7 +39,7 @@ header.scrolled {
 }
 
 .logo-img {
-    height: 50px;
+    height: 70px;
     width: auto;
     object-fit: contain;
 }
@@ -49,7 +47,6 @@ header.scrolled {
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
 }
 
 .brand-name {
@@ -107,6 +104,18 @@ header.scrolled {
     gap: 1.5rem;
     border-top: 1px solid #f0f0f0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 968px) {
@@ -117,31 +126,107 @@ header.scrolled {
     .mobile-toggle {
         display: block;
     }
+
+    .logo-img {
+        height: 44px;
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+    }
+
+    .brand-sub {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.25rem 0.5rem;
+        min-width: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .logo-img {
-        height: 36px;
+        height: 32px;
     }
 
     .brand-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .brand-sub {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .logo {
         gap: 0.5rem;
     }
 
+    .logo-img {
+        height: 44px;
+    }
+
+    .mobile-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+
     .mobile-nav {
         padding: 1.5rem;
         gap: 1.2rem;
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
     }
 
     .mobile-nav .nav-link {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    header {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .brand-name {
+        font-size: 0.9rem;
+    }
+
+    .brand-sub {
+        font-size: 0.75rem;
+    }
+
+    .logo-img {
+        height: 44px;
+    }
+
+    .mobile-toggle svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    header {
+        padding: 0 0.25rem;
+    }
+
+    .nav-container {
+        gap: 0.5rem;
+    }
+
+    .mobile-nav {
+        padding: 1rem;
     }
 }

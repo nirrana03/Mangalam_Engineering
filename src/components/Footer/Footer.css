@@ -1,12 +1,15 @@
 .footer-main {
+    width: 100%;
     background-color: #002d5b;
     color: white;
-    padding: 1rem 0 0;
+    padding: 1rem 0 0 0;
     /* Reduced top space */
     position: relative;
 }
 
 .footer-grid-layout {
+    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
@@ -46,12 +49,12 @@
 
 .brand-primary {
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 500;
 }
 
 .brand-secondary {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
 .social-links-row {
@@ -79,7 +82,7 @@
 /* Common Column Styles */
 .column-title {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 2rem;
     position: relative;
 }
@@ -122,10 +125,33 @@
 
 .contact-item {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 12px;
+    gap: 0.75rem;
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
+    min-width: 0;
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    stroke: currentColor;
+    fill: none;
+}
+
+.contact-item span {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer-column {
+    padding: 0;
 }
 
 /* Newsletter Column */
@@ -202,6 +228,36 @@
 @media (max-width: 600px) {
     .footer-grid-layout {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .footer-column-brand,
+    .footer-column,
+    .footer-column-newsletter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    .column-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .column-links li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .column-links li a {
+        justify-content: center;
     }
 
     .subscribe-form {
@@ -237,5 +293,112 @@
     .footer-legal {
         font-size: 0.8rem;
         padding: 0.75rem 0;
+    }
+
+    .contact-details {
+        align-items: center;
+    }
+
+    .contact-item span {
+        white-space: nowrap;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .contact-item svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-grid-layout {
+        gap: 1rem;
+    }
+
+    .column-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-column-1 {
+        margin-top: 1rem;
+        padding-right: 50px;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-column {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .brand-primary,
+    .brand-secondary {
+        font-size: 1.2rem;
+    }
+
+    .social-box {
+        width: 32px;
+        height: 32px;
+    }
+
+    .subscribe-form {
+        padding: 8px;
+    }
+
+    .subscribe-form input {
+        padding: 8px 12px;
+    }
+
+    .subscribe-btn {
+        padding: 8px 12px;
+    }
+
+    .contact-item svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer-grid-layout {
+        gap: 0.75rem;
+    }
+
+    .column-title {
+        font-size: 1rem;
+    }
+
+    .footer-column-1 {
+        margin-top: 1rem;
+        padding-right: 55px;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-column {
+        margin-top: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .brand-primary,
+    .brand-secondary {
+        font-size: 1.1rem;
+    }
+
+    .social-box {
+        width: 28px;
+        height: 28px;
+    }
+
+    .subscribe-form {
+        padding: 6px;
+    }
+
+    .subscribe-form input {
+        padding: 6px 10px;
+    }
+
+    .subscribe-btn {
+        padding: 6px 10px;
     }
 }

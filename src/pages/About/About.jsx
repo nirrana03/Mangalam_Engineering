@@ -12,7 +12,7 @@ export default function About() {
             {/* Dark Hero Section */}
             <section className="about-hero">
                 <h1>ABOUT US</h1>
-                <div className="breadcrumb">
+                <div className="breadcrumb" style={{fontWeight: '400', fontSize: '1.3rem'}}>
                     <Link to="/" style={{ color: 'var(--primary)' }}><Home size={18} style={{ marginRight: '5px' }} /> Home</Link>
                     <span style={{ color: 'var(--primary)', margin: '0 8px' }}>&gt;&gt;</span>
                     <span>About Us</span>
@@ -38,7 +38,7 @@ export default function About() {
                                 />
                             </div>
                             <div className="experience-badge">
-                                <h4 style={{ fontSize: '1.4rem', color: '#002d5b', fontWeight: '800', lineHeight: '1.2', marginBottom: '1rem' }}>20+ Years of<br />Experience</h4>
+                                <h4 style={{ fontSize: '1.4rem', color: '#002d5b', fontWeight: '600', lineHeight: '1.2', marginBottom: '1rem' }}>20+ Years of<br />Experience</h4>
                                 <div className="stars" style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i} size={20} fill="#f26522" color="#f26522" />
@@ -49,7 +49,7 @@ export default function About() {
 
                         <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                             <span className="subtitle">ABOUT US COMPANY</span>
-                            <h2 className="section-title" style={{ color: '#002d5b', fontSize: '3rem', marginBottom: '2rem' }}>Delivering Industrial Solutions</h2>
+                            <h2 className="section-title" style={{ color: '#002d5b', fontSize: '3rem', marginBottom: '2rem', fontWeight: '500' }}>Delivering Industrial Solutions</h2>
 
                             <p className="mb-4" style={{ fontSize: '1rem', color: '#555', lineHeight: '1.8', marginBottom: '1.5rem' }}>
                                 We started as a small organization, but by adopting the latest production technologies and maintaining strict quality control, we have successfully delivered a wide range of products and services, ensuring complete customer satisfaction.

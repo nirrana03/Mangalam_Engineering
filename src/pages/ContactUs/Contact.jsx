@@ -83,7 +83,7 @@ export default function Contact() {
                                     <textarea rows="5" placeholder="Message" required></textarea>
                                 </div>
                                 <div className="form-submit">
-                                    <button type="submit" className="submit-now-btn">
+                                    <button type="submit" className="submit-now-btn" style={{padding: '12px 30px', fontWeight: '400'}}>
                                         SUBMIT NOW
                                     </button>
                                 </div>

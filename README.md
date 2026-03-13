@@ -14,3 +14,20 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Responsive Design
+
+This website is fully responsive and optimized for all devices:
+- 📱 Mobile phones (320px - 768px)
+- 📱 Tablets (768px - 1024px)
+- 💻 Desktops (1024px+)
+
+For detailed responsive design documentation, see [RESPONSIVE.md](./RESPONSIVE.md).
+
+### Key Features
+- Mobile-first approach
+- Touch-friendly interface (44x44px minimum tap targets)
+- Smooth animations and transitions
+- Optimized images for all screen sizes
+- Accessible keyboard navigation
+- No horizontal scrolling on any device

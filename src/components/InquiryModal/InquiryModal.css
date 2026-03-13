@@ -51,7 +51,7 @@
     font-size: 28px;
     color: #00264d;
     margin-bottom: 12px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .modal-header p {
@@ -93,6 +93,7 @@
 .form-group textarea {
     border-radius: 15px;
     resize: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 .form-group input:focus,

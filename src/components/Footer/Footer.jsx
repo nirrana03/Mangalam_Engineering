@@ -25,7 +25,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="footer-column">
+                    <div className="footer-column-1" style={{marginLeft: '30px'}}>
                         <h4 className="column-title">Quick Links</h4>
                         <ul className="column-links">
                             <li><Link to="/about"> <ChevronRight size={14} /> About Us</Link></li>
@@ -34,15 +34,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="footer-column">
+                    <div className="footer-column" style={{marginRight: '30px'}}>
                         <h4 className="column-title">Contact Information</h4>
                         <div className="contact-details">
                             <div className="contact-item">
-                                <Mail size={18} />
+                                <Mail />
                                 <span>Email : Bankim@Mangalam.Info</span>
                             </div>
                             <div className="contact-item">
-                                <Phone size={18} />
+                                <Phone />
                                 <span>Mobile: +91 9825098482</span>
                             </div>
                         </div>

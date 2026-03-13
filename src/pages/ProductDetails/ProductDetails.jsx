@@ -4,12 +4,14 @@ import { products } from '../../data/products';
 import { ChevronLeft, ChevronRight, MoveRight, House } from 'lucide-react';
 import InquiryModal from '../../components/InquiryModal/InquiryModal';
 import './ProductDetails.css';
+import '../ProductPage/Products.css';
 
 export default function ProductDetails() {
     const { id } = useParams();
     const product = products.find(p => p.id === parseInt(id));
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [relatedIndex, setRelatedIndex] = useState(0);
 
     if (!product) {
         return (
@@ -20,7 +22,19 @@ export default function ProductDetails() {
         );
     }
 
-    const relatedProducts = products.filter(p => p.id !== product.id).slice(0, 3);
+    const relatedProductsAll = products.filter(p => p.id !== product.id);
+    const relatedProducts = Array.from({ length: 3 }, (_, i) => {
+        const index = (relatedIndex + i) % relatedProductsAll.length;
+        return relatedProductsAll[index];
+    });
+
+    const slidePrev = () => {
+        setRelatedIndex(prev => (prev - 1 + relatedProductsAll.length) % relatedProductsAll.length);
+    };
+
+    const slideNext = () => {
+        setRelatedIndex(prev => (prev + 1) % relatedProductsAll.length);
+    };
 
     const displayFeatures = product.features || [
         "Higher torque ratings",
@@ -102,25 +116,46 @@ export default function ProductDetails() {
                     <div className="related-header">
                         <h2>Related Products</h2>
                         <div className="slider-controls">
-                            <button className="control-btn"><ChevronLeft size={20} /></button>
-                            <button className="control-btn"><ChevronRight size={20} /></button>
+                            <button className="control-btn" onClick={slidePrev} aria-label="Previous products"><ChevronLeft size={20} /></button>
+                            <button className="control-btn" onClick={slideNext} aria-label="Next products"><ChevronRight size={20} /></button>
                         </div>
                     </div>
 
                     <div className="related-grid">
                         {relatedProducts.map((p) => (
-                            <div key={p.id} className="related-card-wrapper">
-                                <Link to={`/products/${p.id}`} className="related-card" onClick={() => window.scrollTo(0, 0)}>
-                                    <div className="related-img">
-                                        <img src={p.image} alt={p.name} />
+                            <div key={p.id} className="product-card">
+                                <div className="product-card-overlay"></div>
+
+                                <div className="product-image">
+                                    <img src={p.image} alt={p.name} />
+                                </div>
+
+                                <div className="product-hover-content">
+                                    <p>{p.description}</p>
+                                    <Link
+                                    to={`/products/${p.id}`}
+                                    className="btn-read-more"
+                                    onClick={() => window.scrollTo(0, 0)}
+                                    >
+                                    View Details
+                                    </Link>
+                                </div>
+
+                                <div className="product-card-footer">
+                                    <div className="product-info">
+                                    <h3>{p.name}</h3>
                                     </div>
-                                    <div className="related-footer">
-                                        <h3>{p.name}</h3>
-                                        <div className="go-btn">
-                                            <ChevronRight size={20} />
-                                        </div>
+
+                                    <div className="product-btn-wrapper">
+                                    <Link
+                                        to={`/products/${p.id}`}
+                                        className="product-btn"
+                                        onClick={() => window.scrollTo(0, 0)}
+                                    >
+                                        <ChevronRight size={24} />
+                                    </Link>
                                     </div>
-                                </Link>
+                                </div>
                             </div>
                         ))}
                     </div>

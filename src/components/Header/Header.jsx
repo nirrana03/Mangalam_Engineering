@@ -32,8 +32,8 @@ export default function Header() {
             <img src={logoImg} alt="Mangalam Logo" className="logo-img" />
           </div>
           <div className="logo-text">
-            <span className="brand-name">Mangalam</span>
-            <span className="brand-sub">Engineering</span>
+            <span className="brand-name" style={{fontSize: '1.3rem'}}>Mangalam</span>
+            <span className="brand-sub" style={{fontSize: '1.3rem', marginTop: '4px'}}>Engineering</span>
           </div>
         </Link>
 

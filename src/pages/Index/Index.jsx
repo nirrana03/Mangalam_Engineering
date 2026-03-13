@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Index.css';
 
-// Assets
+import navLogo from '../../assets/Logo.png';
 import indexLogo from '../../assets/Index_Logo.png';
 import engineeringImg from '../../assets/Engineering.png';
 import salesImg from '../../assets/Sales.png';
@@ -22,7 +22,7 @@ const Index = () => {
                 <div className="index-container">
                     <div className="header-content">
                         <div className="small-logo">
-                            <img src={indexLogo} alt="Logo" className="header-logo-icon" />
+                            <img src={navLogo} alt="Logo" className="header-logo-icon" />
                         </div>
                         <div className="social-links">
                             <a href="#" className="social-icon"><img src={facebookIcon} alt="FB" /></a>
@@ -47,7 +47,7 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <h1 className="welcome-text">Welcome to Mangalam Engineering</h1>
+                        <h2 className="welcome-text">Welcome to Mangalam Engineering</h2>
                         <p className="tagline">Reliable Supply of Motors, Cylinders & Engineering Solutions</p>
                     </section>
 
@@ -57,18 +57,30 @@ const Index = () => {
                             <Link to="/home" className="business-card">
                                 <div className="card-image">
                                     <img src={engineeringImg} alt="Mangalam Engineering" />
+
+                                    <div className="card-overlay">
+                                        <div className="hover-circle">
+                                            <span className="arrow">↗</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </Link>
-                            <h2 className="card-title">Mangalam Engineering</h2>
+                            <h3 className="card-title">Mangalam Engineering</h3>
                         </div>
 
                         <div className="business-card-wrapper">
-                            <Link to="/home" className="business-card">
+                            <Link to="https://mangalam-sales-cms.vercel.app/" className="business-card" target="_blank" rel="noopener noreferrer">
                                 <div className="card-image">
                                     <img src={salesImg} alt="Mangalam Sales" />
+
+                                    <div className="card-overlay">
+                                        <div className="hover-circle">
+                                            <span className="arrow">↗</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </Link>
-                            <h2 className="card-title">Mangalam Sales</h2>
+                            <h3 className="card-title">Mangalam Sales</h3>
                         </div>
                     </section>
 
@@ -77,7 +89,7 @@ const Index = () => {
                         <div className="contact-item">
                             <img src={emailIcon} alt="Email" className="contact-icon" />
                             <span className="contact-label">Email :</span>
-                            <a href="mailto:example@email.com" className="contact-value">example@email.com</a>
+                            <a href="mailto:example@email.com" className="contact-value">Bankim@Mangalam.Info</a>
                         </div>
                         <div className="contact-item">
                             <img src={phoneIcon} alt="Phone" className="contact-icon" />
